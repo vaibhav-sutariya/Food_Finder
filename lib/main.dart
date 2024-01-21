@@ -1,12 +1,16 @@
 
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:no_hunger/firebase_options.dart';
 import 'package:no_hunger/screens/Fav_screen.dart';
-import 'package:no_hunger/screens/acccount_screen.dart';
 import 'package:no_hunger/screens/home_screen.dart';
 import 'package:no_hunger/screens/search_page.dart';
+import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -18,16 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bottom Navbar',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(color: Colors.black),
-          color: Colors.green[700],
-        ),
-      ),
-      home: const MyHomePage(title: 'Food Finder'),
+      // theme: AppTheme.lightTheme(context),
+      title: 'Food Finder',
+      home: const MyHomePage(title: 'Food Finder',),
     );
   }
 }
@@ -97,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const HomeScreen(),
             SearchScreen(),
             RestaurantList(),
-            AccountScreen(),
+            SignInScreen(),
           ],
           onPageChanged: (index) {
             onPageChange(index);
