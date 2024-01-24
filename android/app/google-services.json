@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662289805824",
+    "project_id": "food-finder-a38a3",
+    "storage_bucket": "food-finder-a38a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662289805824:android:6726e0d406c5dc67515ee5",
+        "android_client_info": {
+          "package_name": "com.example.no_hunger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBixfQzMRy9k8ayhALR1i93M_4bEqLWLeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

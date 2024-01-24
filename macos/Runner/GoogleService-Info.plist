@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAwYg1KJLRxtKAwccLg1Sxh54PJgpDymm4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>662289805824</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.noHunger.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>food-finder-a38a3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>food-finder-a38a3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:662289805824:ios:fd7c90b101b13597515ee5</string>
+</dict>
+</plist>
