@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:no_hunger/screens/main/screens/Fav_screen.dart';
 import 'package:no_hunger/screens/main/screens/home_screen.dart';
-import 'package:no_hunger/screens/main/screens/search_page.dart';
 import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
 
 class BottomBar extends StatefulWidget {
