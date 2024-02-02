@@ -8,6 +8,7 @@ import '../../components/socal_card.dart';
 import '../../constants.dart';
 import 'components/sign_up_form.dart';
 
+// ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   ValueNotifier userCredential = ValueNotifier('');
 
