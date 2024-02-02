@@ -35,14 +35,7 @@ class _BottomBarState extends State<BottomBar> {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.star_border_outlined,
-              color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_active,
+              Icons.search,
               color: Colors.white,
             ),
           ),
