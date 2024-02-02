@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAwYg1KJLRxtKAwccLg1Sxh54PJgpDymm4</string>
+	<string>AIzaSyB2b5sXAqM2OnQJSfZvOkCShpVu9KnwVpo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>662289805824</string>
+	<string>978598734716</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.noHunger.RunnerTests</string>
+	<string>com.example.locommerce.RunnerTests</string>
 	<key>PROJECT_ID</key>
-	<string>food-finder-a38a3</string>
+	<string>locommerce-9ce9d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>food-finder-a38a3.appspot.com</string>
+	<string>locommerce-9ce9d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:662289805824:ios:fd7c90b101b13597515ee5</string>
+	<string>1:978598734716:ios:7abbd01bff67c05be052f9</string>
 </dict>
 </plist>
