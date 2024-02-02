@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:no_hunger/constants.dart';
+import 'package:no_hunger/screens/main/bottomBar.dart';
 
 class InitScreen extends StatefulWidget {
   const InitScreen({super.key});
@@ -41,7 +43,12 @@ class _InitScreenState extends State<InitScreen> {
                 ElevatedButton.icon(
                   icon: const Icon(Icons.restaurant),
                   onPressed: () {
-                    // Add your button press logic here
+                    Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => const BottomBar(),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,

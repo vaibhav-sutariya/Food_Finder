@@ -1,10 +1,9 @@
-
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:no_hunger/screens/home_screen.dart';
+import 'package:no_hunger/screens/main/screens/home_screen.dart';
 
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
@@ -18,8 +17,7 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-
-TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController cPasswordController = TextEditingController();
 
@@ -38,18 +36,17 @@ TextEditingController emailController = TextEditingController();
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
         log("User created!");
-        if(userCredential.user != null){
+        if (userCredential.user != null) {
           // Navigator.pushNamed(context, HomeScreen());
           Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-              builder: (context) => HomeScreen(),
+              builder: (context) => const HomeScreen(),
             ),
           );
           // log(userCredential.credential as String);
         }
-      }on FirebaseAuthException catch (e) {
-
+      } on FirebaseAuthException catch (e) {
         // if(e.code == "weak-password"){
         //   // snakcbar
         // }
@@ -58,7 +55,6 @@ TextEditingController emailController = TextEditingController();
       }
     }
   }
-
 
   final _formKey = GlobalKey<FormState>();
   String? email;
@@ -188,8 +184,8 @@ TextEditingController emailController = TextEditingController();
           const SizedBox(height: 20),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green[700], 
-              elevation: 1.0, 
+              backgroundColor: Colors.green[700],
+              elevation: 1.0,
             ),
             onPressed: () {
               // if (_formKey.currentState!.validate()) {
@@ -199,7 +195,10 @@ TextEditingController emailController = TextEditingController();
               // }
               createAccount();
             },
-            child: const Text("Sign Up", style: TextStyle(color: Colors.white),),
+            child: const Text(
+              "Sign Up",
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),

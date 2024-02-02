@@ -1,10 +1,9 @@
-
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:no_hunger/screens/home_screen.dart';
+import 'package:no_hunger/screens/main/screens/home_screen.dart';
 
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
@@ -18,7 +17,6 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -33,15 +31,13 @@ class _SignFormState extends State<SignForm> {
         UserCredential userCredential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(email: email, password: password);
         if (userCredential.user != null) {
-
-          Navigator.popUntil(context, (route)=>route.isFirst);
+          Navigator.popUntil(context, (route) => route.isFirst);
           // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-
 
           Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-              builder: (context) => HomeScreen(),
+              builder: (context) => const HomeScreen(),
             ),
           );
         }
@@ -50,7 +46,6 @@ class _SignFormState extends State<SignForm> {
       }
     }
   }
-
 
   final _formKey = GlobalKey<FormState>();
   String? email;
@@ -159,7 +154,7 @@ class _SignFormState extends State<SignForm> {
               const Spacer(),
               GestureDetector(
                 // onTap: () => Navigator.pushNamed(
-                    // context, ForgotPasswordScreen.routeName),
+                // context, ForgotPasswordScreen.routeName),
                 child: const Text(
                   "Forgot Password",
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -171,13 +166,16 @@ class _SignFormState extends State<SignForm> {
           const SizedBox(height: 16),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green[700], 
-              elevation: 1.0, 
+              backgroundColor: Colors.green[700],
+              elevation: 1.0,
             ),
             onPressed: () {
               login();
             },
-            child: const Text("Sign In", style: TextStyle(color: Colors.white),),
+            child: const Text(
+              "Sign In",
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
