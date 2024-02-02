@@ -1,6 +1,3 @@
-
-
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:no_hunger/firebase_options.dart';
@@ -21,11 +18,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // theme: AppTheme.lightTheme(context),
       title: 'Food Finder',
-      home: const MyHomePage(title: 'Food Finder',),
+      home: MyHomePage(
+        title: 'Food Finder',
+      ),
     );
   }
 }
@@ -55,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Food Finder',
           style: TextStyle(color: Colors.white),
         ),
@@ -63,14 +62,14 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.star_border_outlined,
               color: Colors.white,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_active,
               color: Colors.white,
             ),
@@ -80,14 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-
   Widget buildPageView() {
     return Expanded(
       child: SizedBox(
         //  height: MediaQuery
-            // .of(context)
-            // .size
-            // .height * 0.8409,
+        // .of(context)
+        // .size
+        // .height * 0.8409,
         child: PageView(
           controller: _pageController,
           physics: const NeverScrollableScrollPhysics(),
@@ -112,43 +110,33 @@ class _MyHomePageState extends State<MyHomePage> {
       currentIndex: selectedPage,
       items: [
         BottomNavigationBarItem(
-            label: 'Home',
-            icon: const Icon(Icons.home),
-        backgroundColor: Colors.green[700],
-
+          label: 'Home',
+          icon: const Icon(Icons.home),
+          backgroundColor: Colors.green[700],
         ),
-
-
         BottomNavigationBarItem(
             label: 'Search',
-            icon: Icon(Icons.search),
-        backgroundColor: Colors.green[700]
-        ),
-
+            icon: const Icon(Icons.search),
+            backgroundColor: Colors.green[700]),
         BottomNavigationBarItem(
             label: 'Food Places',
-            icon: Icon(Icons.list_alt_sharp),
-        backgroundColor: Colors.green[700]
-        ),
-
+            icon: const Icon(Icons.list_alt_sharp),
+            backgroundColor: Colors.green[700]),
         BottomNavigationBarItem(
             label: 'Account',
-            icon: Icon(Icons.account_box_sharp),
-        backgroundColor: Colors.green[700]
-        ),
+            icon: const Icon(Icons.account_box_sharp),
+            backgroundColor: Colors.green[700]),
       ],
-
       onTap: (int index) {
-        _pageController.animateToPage(
-            index, duration: const Duration(microseconds: 1000), curve: Curves.easeIn);
+        _pageController.animateToPage(index,
+            duration: const Duration(microseconds: 1000), curve: Curves.easeIn);
       },
     );
   }
 
-  onPageChange(int index){
+  onPageChange(int index) {
     setState(() {
       selectedPage = index;
     });
   }
-
 }
