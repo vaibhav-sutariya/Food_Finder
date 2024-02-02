@@ -1,10 +1,8 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:no_hunger/screens/home_screen.dart';
-import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
 
 import '../../components/socal_card.dart';
 import '../../constants.dart';
@@ -32,7 +30,6 @@ class SignUpScreen extends StatelessWidget {
     }
   }
 
-
   SignUpScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -58,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   const SignUpForm(),
                   const SizedBox(height: 16),
-                  Row(children: <Widget>[
+                  const Row(children: <Widget>[
                     Expanded(child: Divider()),
                     Text("  OR  "),
                     Expanded(child: Divider()),
@@ -71,12 +68,13 @@ class SignUpScreen extends StatelessWidget {
                         icon: "assets/icons/google-icon.svg",
                         press: () async {
                           userCredential.value = await signInWithGoogle();
-                          if (userCredential.value != null)
+                          if (userCredential.value != null) {
                             print(userCredential.value.user!.email);
+                          }
                           Navigator.pushReplacement(
                             context,
                             CupertinoPageRoute(
-                              builder: (context) => HomeScreen(),
+                              builder: (context) => const HomeScreen(),
                             ),
                           );
                         },
