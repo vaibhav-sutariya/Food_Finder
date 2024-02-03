@@ -44,37 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCwMFuNvRVa9R_Xt2C84DZj38A_bws4tro',
-    appId: '1:662289805824:web:8173f38e55b724cf515ee5',
-    messagingSenderId: '662289805824',
-    projectId: 'food-finder-a38a3',
-    authDomain: 'food-finder-a38a3.firebaseapp.com',
-    storageBucket: 'food-finder-a38a3.appspot.com',
+    apiKey: 'AIzaSyB-cGSLufsmaCKEtxjEhVeFk3KTfFiOvz4',
+    appId: '1:395186008655:web:3f3c412dfc8f1bd97b703a',
+    messagingSenderId: '395186008655',
+    projectId: 'food-finder-b129b',
+    authDomain: 'food-finder-b129b.firebaseapp.com',
+    storageBucket: 'food-finder-b129b.appspot.com',
+    measurementId: 'G-RR7GTNV7GK',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBixfQzMRy9k8ayhALR1i93M_4bEqLWLeM',
-    appId: '1:662289805824:android:6726e0d406c5dc67515ee5',
-    messagingSenderId: '662289805824',
-    projectId: 'food-finder-a38a3',
-    storageBucket: 'food-finder-a38a3.appspot.com',
+    apiKey: 'AIzaSyAK8ecunSXuHaLaPuhzQN_oqCRkfU95uf8',
+    appId: '1:395186008655:android:69d7bbfa85bf5b437b703a',
+    messagingSenderId: '395186008655',
+    projectId: 'food-finder-b129b',
+    storageBucket: 'food-finder-b129b.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAwYg1KJLRxtKAwccLg1Sxh54PJgpDymm4',
-    appId: '1:662289805824:ios:adf89b616d5e6869515ee5',
-    messagingSenderId: '662289805824',
-    projectId: 'food-finder-a38a3',
-    storageBucket: 'food-finder-a38a3.appspot.com',
-    iosBundleId: 'com.example.noHunger',
+    apiKey: 'AIzaSyDDWVcwrawazzeq-yZDk1pd_HgnCuy4mlY',
+    appId: '1:395186008655:ios:ba41550703b62c047b703a',
+    messagingSenderId: '395186008655',
+    projectId: 'food-finder-b129b',
+    storageBucket: 'food-finder-b129b.appspot.com',
+    iosBundleId: 'com.example.locommerce',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAwYg1KJLRxtKAwccLg1Sxh54PJgpDymm4',
-    appId: '1:662289805824:ios:fd7c90b101b13597515ee5',
-    messagingSenderId: '662289805824',
-    projectId: 'food-finder-a38a3',
-    storageBucket: 'food-finder-a38a3.appspot.com',
-    iosBundleId: 'com.example.noHunger.RunnerTests',
+    apiKey: 'AIzaSyDDWVcwrawazzeq-yZDk1pd_HgnCuy4mlY',
+    appId: '1:395186008655:ios:254c166f0ced8b437b703a',
+    messagingSenderId: '395186008655',
+    projectId: 'food-finder-b129b',
+    storageBucket: 'food-finder-b129b.appspot.com',
+    iosBundleId: 'com.example.locommerce.RunnerTests',
   );
 }
