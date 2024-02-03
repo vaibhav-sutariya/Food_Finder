@@ -19,7 +19,7 @@ class _InitScreenState extends State<InitScreen> {
         backgroundColor: kPrimaryColor,
         title: const Text(
           'Food Finder',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         ),
       ),
       body: Container(
@@ -43,7 +43,7 @@ class _InitScreenState extends State<InitScreen> {
                 ElevatedButton.icon(
                   icon: const Icon(Icons.restaurant),
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       CupertinoPageRoute(
                         builder: (context) => const BottomBar(),
@@ -51,7 +51,7 @@ class _InitScreenState extends State<InitScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
+                    foregroundColor: Colors.black,
                     backgroundColor: kPrimaryColor, // Text color
                     padding: const EdgeInsets.all(16), // Button padding
                     shape: RoundedRectangleBorder(

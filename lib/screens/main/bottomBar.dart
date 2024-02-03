@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:no_hunger/constants.dart';
 import 'package:no_hunger/screens/main/screens/Fav_screen.dart';
 import 'package:no_hunger/screens/main/screens/home_screen.dart';
 import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
@@ -27,15 +28,15 @@ class _BottomBarState extends State<BottomBar> {
       appBar: AppBar(
         title: const Text(
           'Food Finder',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.green[700],
+        backgroundColor: kPrimaryColor,
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.search,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ],
@@ -68,23 +69,35 @@ class _BottomBarState extends State<BottomBar> {
 
   Widget buildBottomNav() {
     return BottomNavigationBar(
+      selectedLabelStyle:
+          const TextStyle(color: Colors.black), // Selected label color
+      unselectedLabelStyle: const TextStyle(color: Colors.black),
       type: BottomNavigationBarType.shifting,
-      backgroundColor: Colors.indigo,
       currentIndex: selectedPage,
-      items: [
+      items: const [
         BottomNavigationBarItem(
           label: 'Home',
-          icon: const Icon(Icons.home),
-          backgroundColor: Colors.green[700],
+          icon: Icon(
+            Icons.home,
+            color: kTextColor,
+          ),
+          backgroundColor: kPrimaryColor,
         ),
         BottomNavigationBarItem(
-            label: 'Food Places',
-            icon: const Icon(Icons.list_alt_sharp),
-            backgroundColor: Colors.green[700]),
+          label: 'Food Places',
+          icon: Icon(
+            Icons.list_alt_sharp,
+            color: kTextColor,
+          ),
+          backgroundColor: kPrimaryColor,
+        ),
         BottomNavigationBarItem(
             label: 'Account',
-            icon: const Icon(Icons.account_box_sharp),
-            backgroundColor: Colors.green[700]),
+            icon: Icon(
+              Icons.account_box_sharp,
+              color: kTextColor,
+            ),
+            backgroundColor: kPrimaryColor),
       ],
       onTap: (int index) {
         _pageController.animateToPage(index,

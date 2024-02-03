@@ -41,6 +41,7 @@ dependencies:
   google_sign_in: ^6.2.1
   flutter_svg: ^2.0.9
   firebase_core: ^2.24.2
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:

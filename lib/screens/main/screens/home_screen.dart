@@ -1,9 +1,10 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:no_hunger/constants.dart';
+import 'package:no_hunger/screens/main/screens/componets/bottomSlideBar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .then((value) {})
         .onError((error, stackTrace) async {
       await Geolocator.requestPermission();
-      print("ERROR" + error.toString());
+      print("ERROR$error");
     });
     return await Geolocator.getCurrentPosition();
   }
@@ -91,37 +92,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   FloatingActionButton(
                     onPressed: _onMapTypeButtonPressed,
                     materialTapTargetSize: MaterialTapTargetSize.padded,
-                    backgroundColor: Colors.green,
+                    backgroundColor: kPrimaryColor,
                     child: const Icon(Icons.map, size: 36.0),
                   ),
                   const SizedBox(height: 16.0),
                   FloatingActionButton(
                     onPressed: _onAddMarkerButtonPressed,
                     materialTapTargetSize: MaterialTapTargetSize.padded,
-                    backgroundColor: Colors.green,
+                    backgroundColor: kPrimaryColor,
                     child: const Icon(Icons.add_location, size: 36.0),
                   ),
                   const SizedBox(height: 16.0),
                   FloatingActionButton(
-                    backgroundColor: Colors.green,
-
+                    backgroundColor: kPrimaryColor,
                     onPressed: () async {
                       getUserCurrentLocation().then((value) async {
-                        print(value.latitude.toString() +
-                            " " +
-                            value.longitude.toString());
+                        print("${value.latitude} ${value.longitude}");
 
                         // marker added for current users location
                         _markers.add(Marker(
-                          markerId: MarkerId("2"),
+                          markerId: const MarkerId("2"),
                           position: LatLng(value.latitude, value.longitude),
-                          infoWindow: InfoWindow(
+                          infoWindow: const InfoWindow(
                             title: 'My Current Location',
                           ),
                         ));
 
                         // specified current users location
-                        CameraPosition cameraPosition = new CameraPosition(
+                        CameraPosition cameraPosition = CameraPosition(
                           target: LatLng(value.latitude, value.longitude),
                           zoom: 14,
                         );
@@ -133,12 +131,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         setState(() {});
                       });
                     },
-                    child: Icon(Icons.local_activity, size: 36.0,),
+                    child: const Icon(
+                      Icons.local_activity,
+                      size: 36.0,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
+          const BottomSlider()
         ],
       ),
     );
