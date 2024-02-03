@@ -44,7 +44,5 @@ class _MyHomePageState extends State<MyHomePage> {
     return const Scaffold(
       body: InitScreen(),
     );
-   
   }
-
 }
