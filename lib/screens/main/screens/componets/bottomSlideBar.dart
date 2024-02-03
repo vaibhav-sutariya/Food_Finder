@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:no_hunger/constants.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class Restaurant {
