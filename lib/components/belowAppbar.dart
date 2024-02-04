@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:no_hunger/constants.dart';
 
 class AddressBox extends StatefulWidget {
   const AddressBox({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class AddressBox extends StatefulWidget {
 class _AddressBoxState extends State<AddressBox> {
   Position? _currentPosition;
   String? _currentAddress;
+
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -58,6 +61,7 @@ class _AddressBoxState extends State<AddressBox> {
 
       setState(() {
         _currentAddress = _currentAddress;
+        _isLoading = false;
       });
     } catch (e) {
       print(e);
@@ -87,10 +91,17 @@ class _AddressBoxState extends State<AddressBox> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (_currentPosition != null)
+                  if (_isLoading)
+                    const CircularProgressIndicator(
+                      color: kSecondaryColor,
+                    )
+                  else if (_currentPosition != null && _currentAddress != null)
                     Text(
                       'Current Location: $_currentAddress',
-                      style: const TextStyle(fontSize: 15, color: Colors.black),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
                     ),
                 ],
               ),
