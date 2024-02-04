@@ -28,15 +28,14 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         color: kPrimaryColor,
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: Image(
-                image: AssetImage('assets/images/splash.png'),
-              ),
+            Image(
+              image: AssetImage('assets/images/splash.png'),
             ),
             Text(
               'Meals For Everyone...',
