@@ -25,14 +25,28 @@ class _AddressBoxState extends State<AddressBox> {
   Future<void> _getLocationPermission() async {
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        // Handle case when permission is denied
-        return;
-      }
-    }
+      // Show a snackbar to inform the user about the importance of location permission
+      final snackBar = SnackBar(
+        content: const Text('Location permission is mandatory for this app.'),
+        action: SnackBarAction(
+          label: 'Grant',
+          onPressed: () async {
+            permission = await Geolocator.requestPermission();
+            if (permission == LocationPermission.denied) {
+              _getLocationPermission();
+            } else {
+              // User granted permission, proceed to get location
+              _getCurrentLocation();
+            }
+          },
+        ),
+      );
 
-    _getCurrentLocation();
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else {
+      // Location permission is already granted, proceed to get location
+      _getCurrentLocation();
+    }
   }
 
   Future<void> _getCurrentLocation() async {
