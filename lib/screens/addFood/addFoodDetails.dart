@@ -25,13 +25,13 @@ class _AddFoodDetailsState extends State<AddFoodDetails> {
         ),
       ),
       body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: AddFoodDetailsForm(),
-            ),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              AddFoodDetailsForm(),
+            ],
+          ),
         ),
       ),
     );

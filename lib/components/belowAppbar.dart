@@ -85,7 +85,7 @@ class _AddressBoxState extends State<AddressBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
@@ -101,7 +101,7 @@ class _AddressBoxState extends State<AddressBox> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

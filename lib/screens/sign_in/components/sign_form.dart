@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:no_hunger/screens/main/screens/home_screen.dart';
+import 'package:no_hunger/screens/addFood/addFoodDetails.dart';
 
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
@@ -37,7 +37,7 @@ class _SignFormState extends State<SignForm> {
           Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => const AddFoodDetails(),
             ),
           );
         }
@@ -156,7 +156,7 @@ class _SignFormState extends State<SignForm> {
                 // onTap: () => Navigator.pushNamed(
                 // context, ForgotPasswordScreen.routeName),
                 child: const Text(
-                  "Forgot Password",
+                  "Forgot Password?",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )

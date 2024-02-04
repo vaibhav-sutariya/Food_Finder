@@ -1,8 +1,9 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:no_hunger/constants.dart';
+import 'package:no_hunger/screens/addFood/addFoodDetails.dart';
 
 import '../../components/no_account_text.dart';
 import '../../components/socal_card.dart';
@@ -35,6 +36,17 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: kPrimaryColor,
+        title: const Text(
+          'Food Finder',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -59,7 +71,7 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   const SignForm(),
                   const SizedBox(height: 16),
-                  Row(children: <Widget>[
+                  const Row(children: <Widget>[
                     Expanded(child: Divider()),
                     Text("  OR  "),
                     Expanded(child: Divider()),
@@ -72,14 +84,15 @@ class SignInScreen extends StatelessWidget {
                         icon: "assets/icons/google-icon.svg",
                         press: () async {
                           userCredential.value = await signInWithGoogle();
-                          if (userCredential.value != null)
+                          if (userCredential.value != null) {
                             print(userCredential.value.user!.email);
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   CupertinoPageRoute(
-                          //     builder: (context) => LoginSuccessScreen(),
-                          //   ),
-                          // );
+                          }
+                          Navigator.pushReplacement(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const AddFoodDetails(),
+                            ),
+                          );
                         },
                       ),
                       // SocalCard(

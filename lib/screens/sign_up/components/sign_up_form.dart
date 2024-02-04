@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:no_hunger/screens/main/screens/home_screen.dart';
+import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
 
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
@@ -41,7 +41,7 @@ class _SignUpFormState extends State<SignUpForm> {
           Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => SignInScreen(),
             ),
           );
           // log(userCredential.credential as String);

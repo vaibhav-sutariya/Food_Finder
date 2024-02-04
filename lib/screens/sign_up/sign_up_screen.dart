@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:no_hunger/screens/main/screens/home_screen.dart';
+import 'package:no_hunger/screens/addFood/addFoodDetails.dart';
 
 import '../../components/socal_card.dart';
 import '../../constants.dart';
@@ -36,7 +36,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[700],
+        backgroundColor: kPrimaryColor,
         title: const Text("Sign Up"),
       ),
       body: SafeArea(
@@ -75,7 +75,7 @@ class SignUpScreen extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             CupertinoPageRoute(
-                              builder: (context) => const HomeScreen(),
+                              builder: (context) => const AddFoodDetails(),
                             ),
                           );
                         },

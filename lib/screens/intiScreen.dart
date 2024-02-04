@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:no_hunger/components/belowAppbar.dart';
 import 'package:no_hunger/constants.dart';
 import 'package:no_hunger/screens/addFood/addFoodDetails.dart';
 import 'package:no_hunger/screens/main/bottomBar.dart';
+import 'package:no_hunger/screens/sign_in/sign_in_screen.dart';
 
 class InitScreen extends StatefulWidget {
   const InitScreen({super.key});
@@ -83,14 +85,27 @@ class _InitScreenState extends State<InitScreen> {
                     ),
                     ElevatedButton.icon(
                       icon: const Icon(Icons.add),
-                      onPressed: () {
-                        // Add your button press logic here
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => const AddFoodDetails(),
-                          ),
-                        );
+                      onPressed: () async {
+                        // Check if the user is logged in with Firebase Authentication
+                        User? user = FirebaseAuth.instance.currentUser;
+
+                        if (user != null) {
+                          // If logged in, navigate to AddFoodDetailsScreen
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const AddFoodDetails(),
+                            ),
+                          );
+                        } else {
+                          // If not logged in, navigate to SignInScreen
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => SignInScreen(),
+                            ),
+                          );
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
