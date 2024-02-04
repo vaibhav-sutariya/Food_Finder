@@ -66,8 +66,8 @@ class _AddressBoxState extends State<AddressBox> {
       if (placemarks.isNotEmpty) {
         Placemark placemark = placemarks.first;
         _currentAddress =
-            "${placemark.subThoroughfare} ${placemark.thoroughfare}, "
-            "${placemark.subLocality}, ${placemark.locality}, ${placemark.postalCode}, "
+            "${placemark.subThoroughfare} ${placemark.thoroughfare} "
+            "${placemark.subLocality} ${placemark.locality} ${placemark.postalCode} "
             "${placemark.country}";
       } else {
         _currentAddress = "Address not found";
@@ -111,7 +111,7 @@ class _AddressBoxState extends State<AddressBox> {
                     )
                   else if (_currentPosition != null && _currentAddress != null)
                     Text(
-                      'Current Location: $_currentAddress',
+                      '$_currentAddress',
                       style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black,

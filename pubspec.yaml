@@ -43,6 +43,9 @@ dependencies:
   firebase_core: ^2.24.2
   sliding_up_panel: ^2.0.0+1
   geocoding: ^2.1.1
+  cloud_firestore: ^4.15.3
+  firebase_storage: ^11.6.4
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:

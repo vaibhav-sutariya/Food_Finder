@@ -19,14 +19,9 @@ class _InitScreenState extends State<InitScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: kPrimaryColor,
-        title: const Column(
-          children: [
-            Text(
-              'Food Finder',
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-            ),
-          ],
+        title: const Text(
+          'Food Finder',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         ),
       ),
       body: Column(
