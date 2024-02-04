@@ -195,26 +195,36 @@ class _AddFoodDetailsFormState extends State<AddFoodDetailsForm> {
               }
               return null;
             },
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "First Name",
               hintText: "Enter your first name",
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+              suffixIcon:
+                  const CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: kTextColor),
+              ),
             ),
           ),
           const SizedBox(height: 20),
           TextFormField(
             controller: LnameController,
             onSaved: (newValue) => lastName = newValue,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Last Name",
               hintText: "Enter your last name",
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+              suffixIcon:
+                  const CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: kTextColor),
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -235,13 +245,18 @@ class _AddFoodDetailsFormState extends State<AddFoodDetailsForm> {
               }
               return null;
             },
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Phone Number",
               hintText: "Enter your phone number",
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
+              suffixIcon:
+                  const CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: kTextColor),
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -261,14 +276,18 @@ class _AddFoodDetailsFormState extends State<AddFoodDetailsForm> {
               }
               return null;
             },
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Address",
               hintText: "Enter your address",
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon:
-                  CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
+              suffixIcon: const CustomSurffixIcon(
+                  svgIcon: "assets/icons/Location point.svg"),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: kTextColor),
+              ),
             ),
           ),
           FormError(errors: errors),
@@ -297,7 +316,9 @@ class _AddFoodDetailsFormState extends State<AddFoodDetailsForm> {
                 }
               }
             },
-            child: const Text("Continue"),
+            child: const Text(
+              "Continue",
+            ),
           ),
         ],
       ),

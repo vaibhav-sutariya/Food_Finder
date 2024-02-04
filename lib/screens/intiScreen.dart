@@ -21,7 +21,10 @@ class _InitScreenState extends State<InitScreen> {
         backgroundColor: kPrimaryColor,
         title: const Text(
           'Food Finder',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       body: Column(

@@ -18,7 +18,10 @@ class _AddFoodDetailsState extends State<AddFoodDetails> {
         backgroundColor: kPrimaryColor,
         title: const Text(
           'Food Finder',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       body: const SingleChildScrollView(

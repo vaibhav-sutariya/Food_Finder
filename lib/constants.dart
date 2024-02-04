@@ -19,6 +19,8 @@ const headingStyle = TextStyle(
   height: 1.5,
 );
 
+const fontfamily = "Muli";
+
 const defaultDuration = Duration(milliseconds: 250);
 
 // Form Error
