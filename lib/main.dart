@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:no_hunger/constants.dart';
 import 'package:no_hunger/firebase_options.dart';
-import 'package:no_hunger/screens/intiScreen.dart';
+import 'package:no_hunger/screens/splashScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // double screenHeight = MediaQuery.of(context).size.height;
     return const Scaffold(
-      body: InitScreen(),
+      body: SplashScreen(),
     );
   }
 }
